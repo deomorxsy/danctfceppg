@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -97,10 +98,36 @@ acs-*.bib
 *.lol
 
 # makeidx
+=======
+LATEX_DISSERTATION_MASTERS_2024-PPGEC.zip
+abntex2-modelo-img-marca.pdf
+abntex2-modelo-img-grafico.pdf
+
+
+### LaTeX Projects
+
+*.acn
+*.acr
+*.alg
+*.aux
+*.bak
+*.bbl
+*.bcf
+*.blg
+*.brf
+# *.bst
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+>>>>>>> upstream
 *.idx
 *.ilg
 *.ind
 *.ist
+<<<<<<< HEAD
 
 # minitoc
 *.maf
@@ -178,3 +205,35 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+=======
+*.lof
+*.log
+*.lol
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.nav
+*.nlo
+*.nls
+*.out
+*.pdf
+*.pyg
+*.run.xml
+*.snm
+*.synctex.gz
+*.tex.backup
+*.tex~
+*.thm
+*.toc
+*.vrb
+*.xdy
+*.xml
+*blx.bib
+.bak
+.mtc
+build/
+aux/
+.xdv
+
+>>>>>>> upstream
