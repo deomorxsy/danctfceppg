@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-# PPGEC-abnTeX2
+###  danctfceppg
 
-Customização do [abnTeX2](http://www.abntex.net.br/) para dissertações de mestrado do PPGEC - UPE. 
+absurd notes custom template for engenharia da computação ppg.
 
-Para utilizar o modelo é necessário a instalação do LaTeX e do pacocte abnTeX2. Mais informações sobre a instalação em: [Guia para instalação do LaTeX e abnTeX2](https://github.com/abntex/abntex2/wiki/Instalacao).
-
-[Exemplo de documento gerado com o modelo.](https://github.com/victormelo/ppgec-abntex2/blob/master/ppgec-abntex2-modelo.pdf)
-=======
-### PPGEC-abnTeX2
-
-A ricing of [abnTeX2](http://www.abntex.net.br/) for masters dissertations leveraging the PPGEC/UPE template.
+This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations.
 
 #### Changelog and Features
 
@@ -60,9 +53,8 @@ A quick glossary regarding LaTeX files:
 PL Research gets tricky when having to represent logic,
 rules of inference, type theory and category theory.
 This template attemps to solve this issue in order to break the wall between:
-- 1. interested enthusiasts; and
-- 2. a document artifact generation, which includes the research itself.
+- 1: interested enthusiasts; and
+- 2: a document artifact generation, which includes the research itself.
 
 
 
->>>>>>> upstream
