@@ -34,7 +34,9 @@ $(SVG_DIR):
 
 pdf: init
 	set -x
-	xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "main.tex"
+	xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
+
+#"main.tex"
 
 # pdf: init
 # 	set -x
@@ -61,8 +63,12 @@ html: init
 
 init: dir version
 
+# create ./output, ./aux, ./svg directories
 dir:
 	mkdir -p $(OUT_DIR)
+	mkdir -p $(AUX_DIR)
+	mkdir -p $(SVG_DIR)
+
 
 version:
 	PANDOC_VERSION=`pandoc --version | head -1 | cut -d' ' -f2 | cut -d'.' -f1`; \
