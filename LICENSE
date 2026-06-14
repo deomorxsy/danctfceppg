@@ -1,6 +1,23 @@
 MIT License
 
 Copyright (c) 2016 Victor Melo
+Copyright (c) 2026 deomorxsy
+
+In this project commit history:
+- victormelo's previous contributions in
+[https://github.com/victormelo/ppgec-abntex2] belong to victormelo.
+- deomorxsy's contributions in
+[https://github.com/deomorxsy/danctfceppg/] belong to deomorxsy.
+
+With that said, the contributor deomorxsy:
+- DOES NOT claim ownership over the abntex2 template.
+- DOES NOT claim ownership over the victormelo ppgec-abntex2 template.
+- DID NOT receive any grant from PPGEC/UPE in order to make these contributions.
+- DOES NOT represent directly the PPGEC/UPE institution through the commits in this repository.
+- Operates under a volunteer basis, without warranty of any kind.
+- Operates under assumptions of the FOSS philosophy.
+- Operates the [ACM Code of Ethics](https://www.acm.org/code-of-ethics).
+- Does welcome contributions from PPGEC/UPE alumni and teachers.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
