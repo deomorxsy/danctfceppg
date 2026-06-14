@@ -1,3 +1,11 @@
+%%% live-latex-preview convention of tex-root:
+% 'root = ./ppgec-abntex2-modelo.tex'
+% 'root = main.tex'
+
+%%% TeXworks and TeXshop convention of tex-root:
+% !TeX root = main.tex
+
+
 %% abtex2-modelo-trabalho-academico.tex, v-1.9.6 laurocesar
 %% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/
 %%
@@ -97,7 +105,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\include{pretextuais/capa}
+\pagebreak\thispagestyle{empty}\input{./pretextuais/capa}
 
 
 % ---
@@ -224,8 +232,8 @@
 % Inserir folha de aprovação
 % ---
 
-% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
-% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+% Isto é um exemplo de Folha de aprovação,
+% elemento obrigatório da NBR 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
 % do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
 % imagem da página assinada pela banca com o comando abaixo:
 %
@@ -238,21 +246,21 @@
 % Dedicatória
 % ---
 
-\include{pretextuais/dedicatoria}
+\pagebreak\thispagestyle{empty}\input{./pretextuais/dedicatoria}
 
 % ---
 
 % ---
 % Epígrafe
 % ---
-\include{pretextuais/epigrafe}
+\pagebreak\thispagestyle{empty}\input{./pretextuais/epigrafe}
 % ---
 
 % ---
 % RESUMOS
 % ---
 
-\include{pretextuais/resumos}
+\pagebreak\thispagestyle{empty}\input{./pretextuais/resumos}
 
 
 % ---
@@ -284,7 +292,7 @@
 % inserir lista de siglas e simbolos
 % ---
 
-\include{pretextuais/siglasesimbolos}
+\pagebreak\thispagestyle{empty}\input{./pretextuais/siglasesimbolos}
 
 % ---
 
@@ -293,7 +301,7 @@
 % ---
 % Agradecimentos
 % ---
-\include{pretextuais/agradecimentos}
+\pagebreak\thispagestyle{empty}\input{./pretextuais/agradecimentos}
 % ---
 
 
@@ -305,11 +313,11 @@
 \aliaspagestyle{chapter}{simple}
 
 
-\include{conteudo/introducao}
-\include{conteudo/fundamentacao}
-\include{conteudo/metodologia}
-\include{conteudo/resultados}
-\include{conteudo/conclusao}
+\pagebreak\thispagestyle{empty}\input{./conteudo/introducao}
+\pagebreak\thispagestyle{empty}\input{./conteudo/fundamentacao}
+\pagebreak\thispagestyle{empty}\input{./conteudo/metodologia}
+\pagebreak\thispagestyle{empty}\input{./conteudo/resultados}
+\pagebreak\thispagestyle{empty}\input{./conteudo/conclusao}
 
 
 % ----------------------------------------------------------
@@ -334,8 +342,8 @@
 % ---
 % Apêndices e Anexos
 % ---
-\include{postextuais/apendices}
-\include{postextuais/anexos}
+\pagebreak\thispagestyle{empty}\input{./postextuais/apendices}
+\pagebreak\thispagestyle{empty}\input{./postextuais/anexos}
 
 
 %---------------------------------------------------------------------
