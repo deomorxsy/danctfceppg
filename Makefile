@@ -4,13 +4,18 @@
 # 	@rm -f *.out *.aux *.alg *.brf *.acr *.dvi *.gls *.log *.bbl *.blg *.ntn *.not *.lof *.lot *.toc *.loa *.lsg *.nlo *.nls *.ilg *.ind *.ist *.glg *.glo *.xdy *.acn *.idx *.loq *.synctex.gz *~
 #
 
+# Default project directories
 OUT_DIR=output
 AUX_DIR=aux
+SVG_DIR=svg-inkscape
+STYLES_DIR=./assets/styles
 # IN_DIR=markdown
 IN_DIR=./
-STYLES_DIR=styles
-SVG_DIR=svg-inkscape
-STYLE=chmduquesne
+STYLE=riceamasters
+
+# Testing directories
+TEST_OUT_DIR=output
+TEST_AUX_DIR=aux
 
 all: pdf
 
@@ -35,6 +40,10 @@ $(SVG_DIR):
 pdf: init
 	set -x
 	xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
+
+trace_pdf: init
+	set -x
+	strace -f xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
 
 #"main.tex"
 
