@@ -57,4 +57,36 @@ This template attemps to solve this issue in order to break the wall between:
 - 2: a document artifact generation, which includes the research itself.
 
 
+#### Contributor's guide
+
+Interested contributors can just fork and custom as they like,
+but if you want to contribute to this repository in specific,
+just explain exactly why do you think said feature is relevant
+to the context here presented. I'll try to review ASAP.
+
+
+The main themes are overall typesetting. Which includes
+- compiling modularized code to pdf,
+- other ways of organizing proofs
+- type theory tricks
+- category theory tricks
+- an underground programming language being used.
+
+The code may be put inside a folder with the port name under ```./deploy/```.
+Add a Dockerfile and that's it.
+
+From here on the steps are:
+- 1: fork the repository
+- 2: pull the repository forked in your profile to your editing environment/machine
+- 3: create a new branch
+- 4: customize as you like, then you can add your name to the license and your caveats.
+- 5: commit the changes,
+- 6: push to your repo.
+- 7: now you can either:
+  - 7.1: open a pull request on the main branch of
+  your own repository, if it has a webring around or something like that.
+  - 7.2: open a pull request on the repository you forked that project from (this one).
+
+PS: ASAP here means I have no idea when I will even see the PR. You will miss 100% shots you don't take though.
+
 
