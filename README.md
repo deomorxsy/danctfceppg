@@ -31,15 +31,9 @@ This is a previous [example of a document, a PDF file](https://github.com/victor
 
 #### 3. Usage
 
-make pdf will create the whole project. There are some options:
-- build via pandoc
-- build via haskell, using pandoc library.
-- build via xelatex
-- build via luatex
-
-An HTML version is available, which is useful for reports.
-
-The styles will work with either PDF or HTML.
+At the root of the repository:
+- 1: run ```m̀ake pdf``` to compile the project.
+- 2: run ```make clean``` to clean intermediate files from the compilation.
 
 #### 4. LaTeX Glossary
 
@@ -47,6 +41,7 @@ A quick glossary regarding LaTeX files:
 - cls: class filenames
 - sty: package filenames
 - bst: bibtex style filenames
+
 
 #### 5. Regarding PL Research
 
@@ -57,7 +52,20 @@ This template attemps to solve this issue in order to break the wall between:
 - 2: a document artifact generation, which includes the research itself.
 
 
-#### 6. Contributor's guide
+#### 6. todo
+
+Current options for compiling to pdf:
+- [X] build via xelatex
+- [ ] build via pandoc
+- [ ] build via haskell, using pandoc library.
+- [ ] build via luatex
+
+Other todo:
+- [ ] HTML version is available, which is useful for reports.
+- [ ] The styles will work with either PDF or HTML.
+
+
+#### 7. Contributor's guide
 
 Interested contributors can just fork and custom as they like,
 but if you want to contribute to this repository in specific,
