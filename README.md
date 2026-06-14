@@ -1,8 +1,8 @@
 ###  danctfceppg
 
-absurd notes custom template for engenharia da computação ppg.
+danctfceppg means "Deo's Absurd Notes Custom Template For Engenharia da Computação PPG".
 
-This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations.
+This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations, trying to focus on PL research.
 
 #### 1. Changelog and Features
 
