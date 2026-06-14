@@ -39,11 +39,7 @@
 \chapterstyle{default}
 
 % Faz com que as notas de rodapé parem de resetar após novos capítulos
-<<<<<<< HEAD
-\counterwithout{footnote}{chapter}	
-=======
 \counterwithout{footnote}{chapter}
->>>>>>> upstream
 
 % Redefinição de nome de elementos pré-textuais
 
@@ -68,11 +64,7 @@
   \begin{capa}%
     \center
 	\vspace*{-1cm}
-<<<<<<< HEAD
-    \includegraphics[scale=0.3]{imagens/brasao}
-=======
     \includegraphics[scale=0.3]{assets/images/brasao}
->>>>>>> upstream
     \vspace*{-13mm}
     {\SingleSpacing \large \imprimirinstituicao}
 
@@ -85,15 +77,9 @@
   %  \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
     \begin{SingleSpace} \Huge\imprimirtitulo \end{SingleSpace}
     \vspace*{3.3cm}
-<<<<<<< HEAD
-    
-    \normalsize\imprimirtipotrabalho
-    
-=======
 
     \normalsize\imprimirtipotrabalho
 
->>>>>>> upstream
 	\vfill
 
     \normalsize\imprimirlocal, \imprimirdata
@@ -111,11 +97,7 @@
 \begin{folhaderosto}
 \centering
 \vspace*{-1cm}
-<<<<<<< HEAD
-\includegraphics[scale=0.23]{imagens/brasao}
-=======
 \includegraphics[scale=0.23]{assets/images/brasao}
->>>>>>> upstream
 \vspace*{-13mm}
 {\SingleSpacing \large \imprimirinstituicao}
 
@@ -145,11 +127,7 @@
 \vspace*{-0.5cm}
 \begin{flushright}
 \SingleSpacing
-<<<<<<< HEAD
-\normalsize\imprimirorientador \\ 
-=======
 \normalsize\imprimirorientador \\
->>>>>>> upstream
 Orientador
 
 \abntex@ifnotempty{\imprimircoorientador}{%
