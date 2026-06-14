@@ -4,7 +4,7 @@ absurd notes custom template for engenharia da computação ppg.
 
 This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations.
 
-#### Changelog and Features
+#### 1. Changelog and Features
 
 Renamed files:
 - ppgec-abntex2-modelo.tex -> main.tex
@@ -17,7 +17,7 @@ For PL Research:
 
 For picture handling, inkscape
 
-#### Dependencies
+#### 2. Dependencies
 
 To use the tooling of this repository, you will need to:
 - 1: install texlive,
@@ -29,7 +29,7 @@ More on abntex2 usage, in pt-br, on "[Guia para instalação do LaTeX e abnTeX2]
 
 This is a previous [example of a document, a PDF file](https://github.com/victormelo/ppgec-abntex2/blob/master/ppgec-abntex2-modelo.pdf), generated with this template setup, by victormelo.
 
-#### Usage
+#### 3. Usage
 
 make pdf will create the whole project. There are some options:
 - build via pandoc
@@ -41,14 +41,14 @@ An HTML version is available, which is useful for reports.
 
 The styles will work with either PDF or HTML.
 
-#### LaTeX Glossary
+#### 4. LaTeX Glossary
 
 A quick glossary regarding LaTeX files:
 - cls: class filenames
 - sty: package filenames
 - bst: bibtex style filenames
 
-#### Regarding PL Research
+#### 5. Regarding PL Research
 
 PL Research gets tricky when having to represent logic,
 rules of inference, type theory and category theory.
@@ -57,7 +57,7 @@ This template attemps to solve this issue in order to break the wall between:
 - 2: a document artifact generation, which includes the research itself.
 
 
-#### Contributor's guide
+#### 6. Contributor's guide
 
 Interested contributors can just fork and custom as they like,
 but if you want to contribute to this repository in specific,
