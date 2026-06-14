@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 all:
 	latexmk -gg -bibtex-cond -pdf ppgec-abntex2-modelo.tex
 clean:
@@ -93,6 +92,4 @@ version:
 		SMART=--smart; \
 	fi \
 
-
->>>>>>> upstream
 
