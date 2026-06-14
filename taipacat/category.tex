@@ -1,0 +1,49 @@
+%%% live-latex-preview convention of tex-root:
+% 'root = ./ppgec-abntex2-modelo.tex'
+% 'root = main.tex'
+
+%%% TeXworks and TeXshop convention of tex-root:
+% !TeX root = main.tex
+
+
+\documentclass{minimal}
+
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\cocolon}{:\!}
+\newcommand{\iso}{\cong}
+\newcommand{\too}{\longrightarrow}
+\newcommand{\tto}{\rightrightarrows}
+\newcommand{\To}[1]{\xrightarrow{#1}}
+\newcommand{\Tto}[3][13pt]{\begin{tikzcd}[sep=#1, cramped, ampersand replacement=\&, text height=1ex, text depth=.3ex]\ar[r, shift left=2pt, "#2"]\ar[r, shift right=2pt, "#3"']\&{}\end{tikzcd}}
+\newcommand{\Too}[1]{\xrightarrow{\;\;#1\;\;}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\From}[1]{\xleftarrow{#1}}
+\newcommand{\Fromm}[1]{\xleftarrow{\;\;#1\;\;}}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\inj}{\rightarrowtail}
+\newcommand{\wavyto}{\rightsquigarrow}
+\newcommand{\lollipop}{\multimap}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\tickar}{\begin{tikzcd}[baseline=-0.5ex,cramped,sep=small,ampersand
+replacement=\&]{}\ar[r,tick]\&{}\end{tikzcd}}
+\newcommand{\imp}{\Rightarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+
+
+% Adjoint, Adjoint Functor, or Adjunctions
+\newcommand{\adj}[5][30pt]{%[size] Cat L, Left, Right, Cat R.
+\begin{tikzcd}[ampersand replacement=\&, column sep=#1]
+  #2\ar[r, bend left=15, shift left=2pt, "#3"]
+  \ar[r, Rightarrow, shorten <=8pt, shorten >=8pt]\&
+  #5\ar[l, bend left=15, shift left=2pt, "#4"]
+\end{tikzcd}
+}
+
+\newcommand{\adjr}[5][30pt]{%[size] Cat R, Right, Left, Cat L.
+\begin{tikzcd}[ampersand replacement=\&, column sep=#1]
+  #2\ar[r, bend left=15, shift left=2pt, "#3"]\&
+  #5\ar[l, bend left=15, shift left=2pt, "#4"]
+  \ar[l, Rightarrow, shorten <=8pt, shorten >=8pt]
+\end{tikzcd}
+}
+
