@@ -2,7 +2,7 @@
 
 danctfceppg means "Deo's Absurd Notes Custom Template For Engenharia da Computação PPG".
 
-This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations, trying to focus on PL research.
+This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations, focusing on PL research.
 
 #### 1. Changelog and Features
 
@@ -70,7 +70,9 @@ Other todo:
 Interested contributors can just fork and custom as they like,
 but if you want to contribute to this repository in specific,
 just explain exactly why do you think said feature is relevant
-to the context here presented. I'll try to review ASAP.
+to the context here presented. I'll try to review the
+Pull Request ASAP.
+
 
 
 The main themes are overall typesetting. Which includes
