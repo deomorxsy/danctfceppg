@@ -5,19 +5,26 @@
 #
 
 # Default project directories
-OUT_DIR=output
-AUX_DIR=aux
-SVG_DIR=svg-inkscape
-STYLES_DIR=./assets/styles
+
+AUX_DIR="./aux"
+OUT_DIR="./output"
+SVG_DIR="./svg-inkscape"
+MD_DIR="./markdown"
+IN_DIR="./"
+
+STYLES_DIR="./assets/styles"
+STYLE="riceamasters"
 # IN_DIR=markdown
 IN_DIR=./
-STYLE=riceamasters
 
 # Testing directories
-TEST_OUT_DIR=output
-TEST_AUX_DIR=aux
+TEST_OUT_DIR="./test/output"
+TEST_AUX_DIR="./test/aux"
 
 all: pdf
+
+shclean:
+	MODE="clean" . ./scripts/pdfbuilder.sh
 
 clean: $(OUT_DIR) $(AUX_DIR) $(SVG_DIR)
 	rm -rf $(AUX_DIR)/*
@@ -40,7 +47,7 @@ $(SVG_DIR):
 pdf: init
 	set -x
 	#xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
-	xelatex -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
+	xelatex -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "./ppgec-abntex2-modelo.tex"
 
 trace_pdf: init
 	set -x
@@ -71,7 +78,7 @@ html: init
 			--metadata pagetitle=$$FILE_NAME;\
 	done
 
-init: dir version
+init: dir xelatex_version
 
 # create ./output, ./aux, ./svg directories
 dir:
@@ -80,7 +87,11 @@ dir:
 	mkdir -p $(SVG_DIR)
 
 
-version:
+xelatex_version:
+	MODE="xelatex_version" PDFBUILDER_VERBOSE="1" . ./scripts/pdfbuilder.sh
+	#xelatex -v
+
+pandoc_version:
 	PANDOC_VERSION=`pandoc --version | head -1 | cut -d' ' -f2 | cut -d'.' -f1`; \
 	if [ "$$PANDOC_VERSION" -eq "2" ]; then \
 		SMART=-smart; \
