@@ -4,6 +4,22 @@ danctfceppg means "Deo's Absurd Notes Custom Template For Engenharia da Computa√
 
 This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on the default [abnTeX2](http://www.abntex.net.br/) for masters dissertations, focusing on PL research.
 
+
+The taipacat package was based on features gathered at the .TEX source
+of the following papers from Arxiv, which are part of FOSS/Open-Science:
+- Type Theory proofs (sequent calculus, rules of inference) from: Jana Dunfield, Paul Blain Levy, Conor Titania Mcbride and Peter Selinger works:
+  - [264] [What Is a Monoid?](https://arxiv.org/abs/2504.12158). PAUL BLAIN LEVY, School of Computer Science, University of Birmingham, United Kingdom. MORGAN ROGERS, Laboratoire d'Informatique Paris Nord (LIPN), UMR CNRS 7030 Universit√© Sorbonne Paris Nord, France. [Submitted on 16 Apr 2025 (v1), last revised 4 Dec 2025 (this version, v2)].
+  - [1168] [Jana Dunfield jdunfield's latex-library](https://github.com/jdunfield/latex-library)
+  - [460] [Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism](https://arxiv.org/abs/1306.6032). Jana Dunfield, Neelakantan R. Krishnaswami. [Submitted on 25 Jun 2013 (v1), last revised 22 Aug 2020 (this version, v2)].
+  - [616] [Bidirectional Typing](https://arxiv.org/abs/1908.05839). Jana Dunfield and Neel Krishnaswami. [Submitted on 16 Aug 2019 (v1), last revised 14 Nov 2020 (this version, v2)].
+- Category Theory graphical representations: graphs, hypergraphs [1070],
+string diagrams, and commutative diagrams from:
+  - [41] [A String Diagrammatic Axiomatisation of Finite-State Automata](https://arxiv.org/abs/2009.14576), [abstract](https://arxiv.org/abs/2009.14576), by Robin Piedeleu, Fabio Zanasi
+  - [42] [A survey of graphical languages for monoidal categories](https://arxiv.org/abs/0908.3347), [abstract](https://arxiv.org/abs/0908.3347), Peter Selinger, Dalhousie University
+  - [644] HINZE, RALF, and DAN MARSDEN. [The Graphical Theory of Monads](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/graphical-theory-of-monads/15AD68F2BC02195A7A2F16075BF0A44D). Journal of Functional Programming 35 (2025): e11. https://doi.org/10.1017/S095679682500005X.
+  - [1070] [Seven Sketches in Compositionality: An Invitation to Applied Category Theory](https://arxiv.org/abs/1803.05316). Brendan Fong David I. Spivak. Last updated: October 16, 2018.
+
+
 #### 1. Changelog and Features
 
 Renamed files:
