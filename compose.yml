@@ -1,0 +1,65 @@
+#version: "3.8"
+#
+volumes:
+  pandoc_bin: {}
+  pandoc_lib: {}
+  xelatex:    {}
+  context_lua:    {}
+  pure_hlg:   {}
+
+services:
+  pandoc_bin:
+    environment:
+      - git_hash
+    build:
+      context: "./deploy/pandoc_bin"
+      dockerfile: "./Dockerfile"
+      tags:
+        - "localhost:5000/pandoc_bin:latest"
+    entrypoint: ["run", "--allow-net", "/app/main.ts"]
+    # command: |
+    #   echo hmm
+  pandoc_lib:
+    environment:
+      - git_hash
+    build:
+      context: "./deploy/pandoc_lib"
+      dockerfile: "./Dockerfile"
+      tags:
+        - "localhost:5000/pandoc_lib:latest"
+    entrypoint: ["run", "--allow-net", "/app/main.ts"]
+    # command: |
+    #   echo hmm
+  xelatex:
+    environment:
+      - git_hash
+    build:
+      context: "./deploy/xelatex"
+      dockerfile: "./Dockerfile"
+      tags:
+        - "localhost:5000/xelatex:latest"
+    entrypoint: ["run", "--allow-net", "/app/main.ts"]
+    # command: |
+    #   echo hmm
+  context_lua:
+    environment:
+      - git_hash
+    build:
+      context: "./deploy/context_lua"
+      dockerfile: "./Dockerfile"
+      tags:
+        - "localhost:5000/context_lua:latest"
+    entrypoint: ["run", "--allow-net", "/app/main.ts"]
+    # command: |
+    #   echo hmm
+  pure_hlg:
+    environment:
+      - git_hash
+    build:
+      context: "./deploy/pure_hlg"
+      dockerfile: "./Dockerfile"
+      tags:
+        - "localhost:5000/pure_hlg:latest"
+    entrypoint: ["run", "--allow-net", "/app/main.ts"]
+    # command: |
+    #   echo hmm
