@@ -1,34 +1,35 @@
-<<<<<<< HEAD
-all:
-	latexmk -gg -bibtex-cond -pdf ppgec-abntex2-modelo.tex
-clean:
-	@rm -f *.out *.aux *.alg *.brf *.acr *.dvi *.gls *.log *.bbl *.blg *.ntn *.not *.lof *.lot *.toc *.loa *.lsg *.nlo *.nls *.ilg *.ind *.ist *.glg *.glo *.xdy *.acn *.idx *.loq *.synctex.gz *~
-=======
 # all:
-# 	latexmk -gg -bibtex-cond -pdf ppgec-abntex2-modelo.tex
+# 	latexmk -gg -bibtex-cond -pdf danctfceppg-modelo.tex
 # clean:
 # 	@rm -f *.out *.aux *.alg *.brf *.acr *.dvi *.gls *.log *.bbl *.blg *.ntn *.not *.lof *.lot *.toc *.loa *.lsg *.nlo *.nls *.ilg *.ind *.ist *.glg *.glo *.xdy *.acn *.idx *.loq *.synctex.gz *~
 #
 
 # Default project directories
-OUT_DIR=output
-AUX_DIR=aux
-SVG_DIR=svg-inkscape
-STYLES_DIR=./assets/styles
+
+AUX_DIR="./typeset/aux"
+OUT_DIR="./typeset/output"
+SVG_DIR="./typeset/svg-inkscape"
+MD_DIR="./typeset/markdown"
+IN_DIR="./typeset/"
+
+STYLES_DIR="./typeset/pdfassets/styles"
+STYLE="riceamasters"
 # IN_DIR=markdown
 IN_DIR=./
-STYLE=riceamasters
 
 # Testing directories
-TEST_OUT_DIR=output
-TEST_AUX_DIR=aux
+TEST_OUT_DIR="./test/output"
+TEST_AUX_DIR="./test/aux"
 
 all: pdf
 
-clean: $(OUT_DIR) $(AUX_DIR) $(SVG_DIR)
-	rm -rf $(AUX_DIR)/*
-	rm -rf $(OUT_DIR)/*
-	rm -rf $(SVG_DIR)/*
+shclean:
+	MODE="clean" . ./scripts/pdfbuilder.sh
+
+# clean: $(OUT_DIR) $(AUX_DIR) $(SVG_DIR)
+# 	rm -rf $(AUX_DIR)/*
+# 	rm -rf $(OUT_DIR)/*
+# 	rm -rf $(SVG_DIR)/*
 
 
 $(OUT_DIR):
@@ -45,11 +46,12 @@ $(SVG_DIR):
 
 pdf: init
 	set -x
-	xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
+	#xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "./typeset/danctfceppg-modelo.tex"
+	xelatex -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="$(AUX_DIR)"  "./typeset/danctfceppg-modelo.tex"
 
 trace_pdf: init
 	set -x
-	strace -f xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
+	strace -f xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "./typeset/danctfceppg-modelo.tex"
 
 #"main.tex"
 
@@ -76,7 +78,7 @@ html: init
 			--metadata pagetitle=$$FILE_NAME;\
 	done
 
-init: dir version
+init: dir xelatex_version
 
 # create ./output, ./aux, ./svg directories
 dir:
@@ -85,7 +87,11 @@ dir:
 	mkdir -p $(SVG_DIR)
 
 
-version:
+xelatex_version:
+	MODE="xelatex_version" PDFBUILDER_VERBOSE="1" . ./scripts/pdfbuilder.sh
+	#xelatex -v
+
+pandoc_version:
 	PANDOC_VERSION=`pandoc --version | head -1 | cut -d' ' -f2 | cut -d'.' -f1`; \
 	if [ "$$PANDOC_VERSION" -eq "2" ]; then \
 		SMART=-smart; \
@@ -94,5 +100,4 @@ version:
 	fi \
 
 
->>>>>>> upstream
 

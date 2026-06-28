@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "danctfceppg"
+abstract: "a customization of ppgec-abntex2's masters dissertations template, focusing on PL research."
+authors:
+- name: victormelo
+  orcid: unknown
+- name: deomorxsy
+  orcid: https://orcid.org/0009-0002-8685-3460
+version: v1.0.0
+doi: 10.5281/zenodo.20939082
+date-released: 2026-06-26
+url: "https://github.com/deomorxsy/danctfceppg"

@@ -6,7 +6,7 @@
 % !TeX root = main.tex
 
 
-\documentclass{minimal}
+%\documentclass{minimal}
 
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\cocolon}{:\!}
@@ -28,6 +28,179 @@
 replacement=\&]{}\ar[r,tick]\&{}\end{tikzcd}}
 \newcommand{\imp}{\Rightarrow}
 \renewcommand{\iff}{\Leftrightarrow}
+
+
+
+% amsthm %
+  \theoremstyle{plain}
+  \newmdtheoremenv[style=theoremframe]{theorem}[equation]{Theorem}
+  \newmdtheoremenv[style=theoremframe]{proposition}[equation]{Proposition}
+  \newmdtheoremenv[style=theoremframe]{corollary}[equation]{Corollary}
+  \newmdtheoremenv[style=theoremframe]{lemma}[equation]{Lemma}
+
+  \theoremstyle{plain}
+  \newmdtheoremenv[style=definitionframe]{definition}[equation]{Definition}
+  \newmdtheoremenv[style=definitionframe]{roughDef}[equation]{Rough Definition}
+  \crefname{roughDef}{Definition}{Definitions}
+  \newtheorem{construction}[equation]{Construction}
+  \newtheorem{notation}[equation]{Notation}
+  \newtheorem{axiom}{Axiom}
+  \newtheorem*{axiom*}{Axiom}
+
+  \theoremstyle{remark}
+  \newtheorem{remark}[equation]{Remark}
+  \newtheorem{warning}[equation]{Warning}
+%  \newtheorem{exercise}[equation]{Exercise}
+
+
+
+
+%Getting ending symbols in example and exercise environments:
+%\newmdtheoremenv[style=exampleframe]{example}[equation]{Example}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\dju}{\sqcup}
+
+\newcommand{\const}[1]{\mathtt{#1}}%a constant, or named element of a set
+\newcommand{\Set}[1]{\mathrm{#1}}%a named set
+\newcommand{\cat}[1]{\mathcal{#1}}%a generic category
+\newcommand{\Cat}[1]{\mathbf{#1}}%a named category
+\newcommand{\fun}[1]{\textit{#1}}%function
+\newcommand{\Fun}[1]{\mathsf{#1}}%functor
+
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\cocolon}{:\!}
+\newcommand{\iso}{\cong}
+\newcommand{\too}{\longrightarrow}
+\newcommand{\tto}{\rightrightarrows}
+\newcommand{\To}[1]{\xrightarrow{#1}}
+\newcommand{\Tto}[3][13pt]{\begin{tikzcd}[sep=#1, cramped, ampersand replacement=\&, text height=1ex, text depth=.3ex]\ar[r, shift left=2pt, "#2"]\ar[r, shift right=2pt, "#3"']\&{}\end{tikzcd}}
+\newcommand{\Too}[1]{\xrightarrow{\;\;#1\;\;}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\From}[1]{\xleftarrow{#1}}
+\newcommand{\Fromm}[1]{\xleftarrow{\;\;#1\;\;}}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\inj}{\rightarrowtail}
+\newcommand{\wavyto}{\rightsquigarrow}
+\newcommand{\lollipop}{\multimap}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\tickar}{\begin{tikzcd}[baseline=-0.5ex,cramped,sep=small,ampersand
+replacement=\&]{}\ar[r,tick]\&{}\end{tikzcd}}
+\newcommand{\imp}{\Rightarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+\renewcommand{\th}{\ensuremath{^\tn{th}}\ }
+\newcommand{\down}{\mathbin{\downarrow}}
+\newcommand{\then}{\mathbin{\scalebox{.8}{/\!\!/}}}
+\newcommand{\op}{^\tn{op}}
+\newcommand{\grph}[1]{{#1}_{\mathrm{Gr}}}
+
+\newcommand{\tn}[1]{\textnormal{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+\newcommand{\LMO}[2][over]{\ifthenelse{\equal{#1}{over}}{\overset{#2}{\bullet}}{\underset{#2}{\bullet}}}
+\newcommand{\LTO}[2][\bullet]{\overset{\tn{#2}}{#1}}
+
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\bb}{\mathbb{B}}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\nn}{\NN}
+%\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\IR}{\mathbb{I}\hspace{.6pt}\mathbb{R}}
+\newcommand{\oo}{\mathcal{O}}
+\newcommand{\singleton}{\{1\}}
+\newcommand{\powset}{\Fun{P}}
+\newcommand{\upset}{\Fun{U}}
+\newcommand{\beh}{\Fun{B}}
+\newcommand{\prt}[1]{\Fun{Prt}(#1)}
+
+\newcommand{\upclose}{\mathop{\uparrow}}
+
+\newcommand{\foo}{\const{foo}}
+
+\newcommand{\inv}{^{-1}}
+
+\newcommand{\inp}[1]{#1^\tn{in}}
+\newcommand{\outp}[1]{#1^\tn{out}}
+
+\newcommand{\TFS}{\Cat{TFS}}
+\newcommand{\Grph}{\Cat{Grph}}
+\newcommand{\SMC}{\Cat{SMC}}
+\newcommand{\smset}{\Cat{Set}}
+\newcommand{\smcat}{\Cat{Cat}}
+\newcommand{\Bx}{\Set{Box}}
+\newcommand{\Op}{\Cat{Op}}
+\newcommand{\Shv}{\Cat{Shv}}
+\newcommand{\true}{\const{true}}
+\newcommand{\false}{\const{false}}
+\newcommand{\Bool}{\Cat{Bool}}
+%\newcommand{\Prob}{\Cat{Prob}}
+\newcommand{\Cost}{\Cat{Cost}}
+\newcommand{\List}{\Fun{List}}
+\newcommand{\inst}{\tn{-}\Cat{Inst}}
+\newcommand{\mat}{\Cat{Mat}}
+\newcommand{\corel}[1]{\Cat{Corel}_{#1}}
+\newcommand{\rel}{\Cat{Rel}}
+\newcommand{\cospan}[1]{\Cat{Cospan}_{#1}}
+\newcommand{\finset}{\Cat{FinSet}}
+
+% Collaborative design{
+  \newcommand{\Prof}{\Cat{Prof}}
+  \newcommand{\Feas}{\Cat{Feas}}
+  \newcommand{\Unit}[1]{\mathrm{U}_{#1}}
+  \newcommand{\comp}[1]{\widehat{#1}}
+  \newcommand{\conj}[1]{\widecheck{#1}}
+  \newcommand{\col}[1]{\mathrm{col(#1)}}
+%}
+
+\newcommand{\cp}{\mathbin{\fatsemi}}
+
+
+% Signal flow graphs{
+\newcommand{\pgin}{\fun{in}}
+\newcommand{\pgout}{\fun{out}}
+\newcommand{\ord}[1]{\underline{{#1}}}
+\newcommand{\free}{\Cat{Free}}
+\newcommand{\expr}{\mathrm{Expr}}
+\newcommand{\sfg}{\mathbf{SFG}}
+\newcommand\addgen{\lower8pt\hbox{$\includegraphics[height=0.7cm]{pics/add.pdf}$}}
+\newcommand\zerogen{\lower5pt\hbox{$\includegraphics[height=0.5cm]{pics/zero.pdf}$}}
+%\newcommand\copygen{\lower8pt\hbox{$\includegraphics[height=0.7cm]{pics/copy.pdf}$}}
+%\newcommand\discardgen{\lower5pt\hbox{$\includegraphics[height=0.5cm]{pics/discard.pdf}$}}
+\newcommand\delaygen{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/delay.pdf}$}}
+%\newcommand\minonegen{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/minone.pdf}$}}
+%\newcommand\delayopgen{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/delayop.pdf}$}}
+\newcommand\scalargen{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/scalar.pdf}$}}
+%\newcommand\addopgen{\lower8pt\hbox{$\includegraphics[height=0.7cm]{pics/addop.pdf}$}}
+%\newcommand\zeroopgen{\lower5pt\hbox{$\includegraphics[height=0.5cm]{pics/zeroop.pdf}$}}
+\newcommand\copyopgen{\lower8pt\hbox{$\includegraphics[height=0.7cm]{pics/copyop.pdf}$}}
+\newcommand\discardopgen{\lower5pt\hbox{$\includegraphics[height=0.5cm]{pics/discardop.pdf}$}}
+%\newcommand\scalaropgen{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/scalarop.pdf}$}}
+%\newcommand\delaygenl{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/delayl.pdf}$}}
+%\newcommand\delayopgenl{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/delayopl.pdf}$}}
+%\newcommand\delaygenk{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/delayk.pdf}$}}
+%\newcommand\delayopgenk{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/delayopk.pdf}$}}
+\newcommand\twist{\lower6pt\hbox{$\includegraphics[height=0.6cm]{pics/twist.pdf}$}}
+%\newcommand\id{\lower3pt\hbox{$\includegraphics[height=0.3cm]{pics/id.pdf}$}}
+
+\tikzstyle{none}=[inner sep=0pt]
+\tikzstyle{circ}=[circle,fill=black,draw,inner sep=3pt]
+\tikzstyle{circw}=[circle,fill=white,draw,inner sep=3pt,thick]
 
 
 % Adjoint, Adjoint Functor, or Adjunctions

@@ -1,17 +1,26 @@
-<<<<<<< HEAD
-# PPGEC-abnTeX2
+###  danctfceppg
 
-Customização do [abnTeX2](http://www.abntex.net.br/) para dissertações de mestrado do PPGEC - UPE. 
+> danctfceppg: "Deo's Absurd Notes Custom Template For Engenharia da Computação PPG".
 
-Para utilizar o modelo é necessário a instalação do LaTeX e do pacocte abnTeX2. Mais informações sobre a instalação em: [Guia para instalação do LaTeX e abnTeX2](https://github.com/abntex/abntex2/wiki/Instalacao).
+This is a rice leveraging victormelo's work on [PPGEC-abnTeX2](https://github.com/victormelo/ppgec-abntex2) PPGEC/UPE template, based on Lauro César Araújo's [abnTeX2](http://www.abntex.net.br/) (which, in turn, is based on the [memoir package](https://ctan.org/pkg/memoir)) for masters dissertations, focusing on PL research.
 
-[Exemplo de documento gerado com o modelo.](https://github.com/victormelo/ppgec-abntex2/blob/master/ppgec-abntex2-modelo.pdf)
-=======
-### PPGEC-abnTeX2
 
-A ricing of [abnTeX2](http://www.abntex.net.br/) for masters dissertations leveraging the PPGEC/UPE template.
+The taipacat package was based on features gathered at the .TEX source
+of the following papers from Arxiv, which are part of FOSS/Open-Science:
+- Type Theory proofs (sequent calculus, rules of inference) from: Jana Dunfield, Paul Blain Levy, Conor Titania Mcbride and Peter Selinger works:
+  - [264] [What Is a Monoid?](https://arxiv.org/abs/2504.12158). PAUL BLAIN LEVY, School of Computer Science, University of Birmingham, United Kingdom. MORGAN ROGERS, Laboratoire d'Informatique Paris Nord (LIPN), UMR CNRS 7030 Université Sorbonne Paris Nord, France. [Submitted on 16 Apr 2025 (v1), last revised 4 Dec 2025 (this version, v2)].
+  - [1168] [Jana Dunfield jdunfield's latex-library](https://github.com/jdunfield/latex-library)
+  - [460] [Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism](https://arxiv.org/abs/1306.6032). Jana Dunfield, Neelakantan R. Krishnaswami. [Submitted on 25 Jun 2013 (v1), last revised 22 Aug 2020 (this version, v2)].
+  - [616] [Bidirectional Typing](https://arxiv.org/abs/1908.05839). Jana Dunfield and Neel Krishnaswami. [Submitted on 16 Aug 2019 (v1), last revised 14 Nov 2020 (this version, v2)].
+- Category Theory graphical representations: graphs, hypergraphs [1070],
+string diagrams, and commutative diagrams from:
+  - [41] [A String Diagrammatic Axiomatisation of Finite-State Automata](https://arxiv.org/abs/2009.14576), [abstract](https://arxiv.org/abs/2009.14576), by Robin Piedeleu, Fabio Zanasi
+  - [42] [A survey of graphical languages for monoidal categories](https://arxiv.org/abs/0908.3347), [abstract](https://arxiv.org/abs/0908.3347), Peter Selinger, Dalhousie University
+  - [644] HINZE, RALF, and DAN MARSDEN. [The Graphical Theory of Monads](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/graphical-theory-of-monads/15AD68F2BC02195A7A2F16075BF0A44D). Journal of Functional Programming 35 (2025): e11. https://doi.org/10.1017/S095679682500005X.
+  - [1070] [Seven Sketches in Compositionality: An Invitation to Applied Category Theory](https://arxiv.org/abs/1803.05316). Brendan Fong David I. Spivak. Last updated: October 16, 2018.
 
-#### Changelog and Features
+
+#### 1. Changelog and Features
 
 Renamed files:
 - ppgec-abntex2-modelo.tex -> main.tex
@@ -24,7 +33,7 @@ For PL Research:
 
 For picture handling, inkscape
 
-#### Dependencies
+#### 2. Dependencies
 
 To use the tooling of this repository, you will need to:
 - 1: install texlive,
@@ -36,33 +45,74 @@ More on abntex2 usage, in pt-br, on "[Guia para instalação do LaTeX e abnTeX2]
 
 This is a previous [example of a document, a PDF file](https://github.com/victormelo/ppgec-abntex2/blob/master/ppgec-abntex2-modelo.pdf), generated with this template setup, by victormelo.
 
-#### Usage
+#### 3. Usage
 
-make pdf will create the whole project. There are some options:
-- build via pandoc
-- build via haskell, using pandoc library.
-- build via xelatex
-- build via luatex
+At the root of the repository:
+- 1: run ```m̀ake pdf``` to compile the project.
+- 2: run ```make clean``` to clean intermediate files from the compilation.
 
-An HTML version is available, which is useful for reports.
-
-The styles will work with either PDF or HTML.
-
-#### LaTeX Glossary
+#### 4. LaTeX Glossary
 
 A quick glossary regarding LaTeX files:
 - cls: class filenames
 - sty: package filenames
 - bst: bibtex style filenames
 
-#### Regarding PL Research
+
+#### 5. Regarding PL Research
 
 PL Research gets tricky when having to represent logic,
 rules of inference, type theory and category theory.
 This template attemps to solve this issue in order to break the wall between:
-- 1. interested enthusiasts; and
-- 2. a document artifact generation, which includes the research itself.
+- 1: interested enthusiasts; and
+- 2: a document artifact generation, which includes the research itself.
+
+
+#### 6. todo
+
+Current options for compiling to pdf:
+- [X] build via xelatex
+- [ ] build via pandoc
+- [ ] build via haskell, using pandoc library.
+- [ ] build via luatex
+
+Other todo:
+- [ ] HTML version is available, which is useful for reports.
+- [ ] The styles will work with either PDF or HTML.
+
+
+#### 7. Contributor's guide
+
+Interested contributors can just fork and custom as they like,
+but if you want to contribute to this repository in specific,
+just explain exactly why do you think said feature is relevant
+to the context here presented. I'll try to review the
+Pull Request ASAP.
 
 
 
->>>>>>> upstream
+The main themes are overall typesetting. Which includes
+- compiling modularized code to pdf,
+- other ways of organizing proofs
+- type theory tricks
+- category theory tricks
+- an underground programming language being used.
+
+The code may be put inside a folder with the port name under ```./deploy/```.
+Add a Dockerfile and that's it.
+
+From here on the steps are:
+- 1: fork the repository
+- 2: pull the repository forked in your profile to your editing environment/machine
+- 3: create a new branch
+- 4: customize as you like, then you can add your name to the license and your caveats.
+- 5: commit the changes,
+- 6: push to your repo.
+- 7: now you can either:
+  - 7.1: open a pull request on the main branch of
+  your own repository, if it has a webring around or something like that.
+  - 7.2: open a pull request on the repository you forked that project from (this one).
+
+PS: ASAP here means I have no idea when I will even see the PR. You will miss 100% shots you don't take though.
+
+
