@@ -10,14 +10,20 @@
 %%
 %% This work has the LPPL maintenance status `maintained'.
 %%
-%% The Current Maintainer of this work is SEU_NOME, SEU_EMAIL
-%%
 %% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%%
+%% ======================================================================
+%%
+%% 27/06/2026 v1.0.0 a volunteered custom model for PPGEC/UPE
+%% based on ppgec-abntex2, baseado on abnTeX2
+%%
+%% The Current Maintainer of this work is deomorxsy, SEU_EMAIL
+%%
 %%
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ppgec-abntex2}[01/09/2016/ v1.0 Modelo do PPGEC-UPE baseado no abnTeX2]
+\ProvidesClass{danctfceppg}[27/06/2026 v1.0.0 a volunteered custom model for PPGEC/UPE based on ppgec-abntex2, baseado on abnTeX2]
 
 %
 % Repassa todos os parametros a classe abntex2,
@@ -64,7 +70,7 @@
   \begin{capa}%
     \center
 	\vspace*{-1cm}
-    \includegraphics[scale=0.3]{assets/images/brasao}
+    \includegraphics[scale=0.3]{pdfassets/images/brasao}
     \vspace*{-13mm}
     {\SingleSpacing \large \imprimirinstituicao}
 
@@ -97,7 +103,7 @@
 \begin{folhaderosto}
 \centering
 \vspace*{-1cm}
-\includegraphics[scale=0.23]{assets/images/brasao}
+\includegraphics[scale=0.23]{pdfassets/images/brasao}
 \vspace*{-13mm}
 {\SingleSpacing \large \imprimirinstituicao}
 
