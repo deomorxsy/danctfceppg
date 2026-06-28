@@ -1,18 +1,18 @@
 # all:
-# 	latexmk -gg -bibtex-cond -pdf ppgec-abntex2-modelo.tex
+# 	latexmk -gg -bibtex-cond -pdf danctfceppg-modelo.tex
 # clean:
 # 	@rm -f *.out *.aux *.alg *.brf *.acr *.dvi *.gls *.log *.bbl *.blg *.ntn *.not *.lof *.lot *.toc *.loa *.lsg *.nlo *.nls *.ilg *.ind *.ist *.glg *.glo *.xdy *.acn *.idx *.loq *.synctex.gz *~
 #
 
 # Default project directories
 
-AUX_DIR="./aux"
-OUT_DIR="./output"
-SVG_DIR="./svg-inkscape"
-MD_DIR="./markdown"
-IN_DIR="./"
+AUX_DIR="./typeset/aux"
+OUT_DIR="./typeset/output"
+SVG_DIR="./typeset/svg-inkscape"
+MD_DIR="./typeset/markdown"
+IN_DIR="./typeset/"
 
-STYLES_DIR="./assets/styles"
+STYLES_DIR="./typeset/pdfassets/styles"
 STYLE="riceamasters"
 # IN_DIR=markdown
 IN_DIR=./
@@ -26,10 +26,10 @@ all: pdf
 shclean:
 	MODE="clean" . ./scripts/pdfbuilder.sh
 
-clean: $(OUT_DIR) $(AUX_DIR) $(SVG_DIR)
-	rm -rf $(AUX_DIR)/*
-	rm -rf $(OUT_DIR)/*
-	rm -rf $(SVG_DIR)/*
+# clean: $(OUT_DIR) $(AUX_DIR) $(SVG_DIR)
+# 	rm -rf $(AUX_DIR)/*
+# 	rm -rf $(OUT_DIR)/*
+# 	rm -rf $(SVG_DIR)/*
 
 
 $(OUT_DIR):
@@ -46,12 +46,12 @@ $(SVG_DIR):
 
 pdf: init
 	set -x
-	#xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
-	xelatex -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "./ppgec-abntex2-modelo.tex"
+	#xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "./typeset/danctfceppg-modelo.tex"
+	xelatex -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="$(AUX_DIR)"  "./typeset/danctfceppg-modelo.tex"
 
 trace_pdf: init
 	set -x
-	strace -f xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "ppgec-abntex2-modelo.tex"
+	strace -f xelatex -no-pdf -interaction=nostopmode -file-line-error -shell-escape -recorder -output-directory="aux"  "./typeset/danctfceppg-modelo.tex"
 
 #"main.tex"
 
