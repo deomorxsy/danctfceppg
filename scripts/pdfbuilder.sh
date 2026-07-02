@@ -1,17 +1,17 @@
 #!/bin/sh
 
 # Default xetex compiler directories
-AUX_DIR="./aux"
-OUT_DIR="./output"
-SVG_DIR="./svg-inkscape"
+AUX_DIR="./typeset/aux"
+OUT_DIR="./typeset/output"
+SVG_DIR="./typeset/svg-inkscape"
 
 # Markdown directories
-MD_DIR="./markdown"
-IN_DIR="./"
+MD_DIR="./typeset/markdown"
+IN_DIR="./typeset/"
 
 # Styles directories
-STYLES_DIR=./assets/styles
-STYLE=riceamasters
+STYLES_DIR="./typeset/pdfassets/styles"
+STYLE="riceamasters"
 
 function_scope_cleaner() {
 
@@ -42,20 +42,20 @@ clean() {
         echo "|> [ERROR]: AUX_DIR not found. Exiting now..."
         return 1
     fi
-    echo "|> [PASS]: found an AUX_DIR directory. Proceeding..."
+    echo "|> [PASS]: found an AUX_DIR directory at [AUX_DIR=${AUX_DIR}]. Proceeding..."
 
     if ! rm -rf "${AUX_DIR}"; then
         echo "|> [ERROR]: could not remove [AUX_DIR=${AUX_DIR}]. Exiting now..."
         return 1
     fi
-    echo "|> [PASS]: successfully removed [AUX_DIR]. Proceeding..."
+    echo "|> [PASS]: successfully removed [AUX_DIR=${AUX_DIR}]. Proceeding..."
 
     # check if OUT_DIR exists, remove OUT_DIR.
     if ! ls -allhtr "${OUT_DIR}"; then
         echo "|> [ERROR]: OUT_DIR not found. Exiting now..."
         return 1
     fi
-    echo "|> [PASS]: found an OUT_DIR directory. Proceeding..."
+    echo "|> [PASS]: found an OUT_DIR directory at [OUT_DIR=${OUT_DIR}]. Proceeding..."
 
     if ! rm -rf "${OUT_DIR}"; then
         echo "|> [ERROR]: could not remove [OUT_DIR=${OUT_DIR}]. Exiting now..."
@@ -68,7 +68,7 @@ clean() {
         echo "|> [ERROR]: SVG_DIR not found. Exiting now..."
         return 1
     fi
-    echo "|> [PASS]: found an SVG_DIR directory. Proceeding..."
+    echo "|> [PASS]: found an SVG_DIR directory at [SVG_DIR=${SVG_DIR}]. Proceeding..."
 
     if ! rm -rf "${SVG_DIR}"; then
         echo "|> [ERROR]: could not remove [SVG_DIR=${SVG_DIR}]. Exiting now..."
@@ -82,22 +82,22 @@ clean() {
 ### ALWAYS_IDEMPOTENT
 create_dirs() {
     ## Create aux directory
-    if ! [ -d "./aux" ]; then
-        mkdir -p "./aux"
+    if ! [ -d "./typeset/aux" ]; then
+        mkdir -p "./typeset/aux"
     fi
-    echo "|> [./aux] directory created with success. Proceeding..."
+    echo "|> [./typeset/aux] directory created with success. Proceeding..."
 
     ## Create svg directory
-    if ! [ -d "./svg" ]; then
-        mkdir -p "./svg"
+    if ! [ -d "./typeset/svg" ]; then
+        mkdir -p "./typeset/svg"
     fi
-    echo "|> [./svg] directory created with success. Proceeding..."
+    echo "|> [./typeset/svg] directory created with success. Proceeding..."
 
     ## Create output directory
-    if ! [ -d "./output" ]; then
-        mkdir -p "./output"
+    if ! [ -d "./typeset/output" ]; then
+        mkdir -p "./typeset/output"
     fi
-    echo "|> [./output] directory created with success. Proceeding..."
+    echo "|> [./typeset/output] directory created with success. Proceeding..."
 }
 
 
@@ -122,14 +122,14 @@ xelatex_version() {
 }
 
 xelatex_pdf() {
-    TEXFILE_TO_INGEST="./ppgec-abntex2-modelo.tex"
+    TEXFILE_TO_INGEST="./typeset/danctfceppg-modelo.tex"
     IN_BETWEEN_BUILD_ART="./artifacts/buildaxela.sh"
 
     # Define function scope for Function [pretty-printer]
     FUNCTION_SCOPE="XELATEX_PDF"
     pretty_printer
 
-    # Create ./output, ./aux, ./svg directories
+    # Create ./typeset/output, ./typeset/aux, ./typeset/svg directories
     if ! create_dirs; then
         echo "|> [Error]: It was not possible to create directories before compiling. Exiting now..."
         return 1
