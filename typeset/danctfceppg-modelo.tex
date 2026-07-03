@@ -52,6 +52,7 @@
 	spanish,			% idioma adicional para hifenização
 	brazil				% o último idioma é o principal do documento
 	]{./typeset/danctfceppg}
+    %
 
 % ---
 % Pacotes básicos
@@ -70,12 +71,43 @@
 
 %-------- Packages --------%
 
-\usepackage{mathtools}
-\usepackage{amsthm}
-\usepackage{amssymb}
+%\usepackage{mathtools}
+
+%% from newpx's doc:
+%   \usepackage{amsmath} % must be loaded before amsthm, if using amsthm
+%   \usepackage{amsthm} % must be loaded before newpxmath
+
+%% \usepackage{amsmath}
+%% \usepackage{amsthm}
+
+
+
+
+%\usepackage[greek.polutonico,english]{babel} % if using babel
+% next line calls fontspec and loads TeXGyrePagellaX otf
+\usepackage[otfmath,theoremfont,trueslanted,largesc,p,osf]{newpx}
+% set mono and sans opentype fonts
+%\usepackage{polyglossia} % must load after fontspec, if using polyglossia
+% polyglossia setup commands
+%\usepackage{unicode-math}% DO NOT NEEDS TO BE LOAD:
+    % |> newpx loads unicode-math,
+    % |> unicode-math loads amsthm,
+    % |> that to work needs amsmath,
+    % |> that must be loaded before newpxmath.
+
+
+\usepackage{tgpagella}
+\usepackage[T1]{fontenc}
+% from https://ctan.org/pkg/tex-gyre-math-pagella
+% from https://tug.org/FontCatalogue/texgyrepagella/
+% \setmathfont{texgyrepagella-math}
+%\setmathfont{tgpagella}
+
+
+%\usepackage{amssymb}
 \usepackage{accents}
 \usepackage{newpxtext}
-\usepackage[varg,bigdelims]{newpxmath}
+% \usepackage[varg,bigdelims]{newpxmath}
 \usepackage{eucal}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{tikz}
@@ -83,7 +115,9 @@
 \usepackage{graphicx}
 \usepackage{outline}
 \usepackage{varwidth}
-\usepackage[inline]{enumitem}
+% etoolbox also clashes with enumitem
+% \usepackage[inline]{enumitem}
+
 % =====================
 % as the [ifthen] package last commit was in 2001,
 % it was eventually superseded by other packages such as
@@ -98,11 +132,18 @@
 \usepackage{etoolbox}
 \usepackage{footnote}
 \usepackage[utf8]{inputenc} %allows non-ascii in bib file
-\usepackage[bookmarks=true, colorlinks=true, linkcolor=blue!50!black,
-citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperref}
+
+% it seems there is a clash with package hyperref.
+% \usepackage[bookmarks=true, colorlinks=true, linkcolor=blue!50!black,
+% citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperref}
+
 \usepackage{subfiles}
 \usepackage[capitalize]{cleveref}
-\usepackage[backend=biber, backref=true, maxbibnames = 10, style = alphabetic]{biblatex}
+
+% Você não deve usar \bibliographystyle
+% Não precisa (e não pode) usar biblatex.
+% from: https://groups.google.com/g/abntex2/c/Tw7g-voR8GQ
+% \usepackage[backend=biber, backref=true, maxbibnames = 10, style = alphabetic]{biblatex}
 \usepackage{makeidx}
 \usepackage[all]{xy}
 \usepackage[framemethod=tikz]{mdframed}
@@ -117,7 +158,7 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
   \newcommand{\creflastconjunction}{, and\nobreakspace} % serial comma
 
 % biblatex %
-  \addbibresource{Library20180913.bib}
+%  \addbibresource{Library20180913.bib}
 
 % makeidx %
   \makeindex
@@ -164,8 +205,7 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 \makeatother
 
 % TikZ Stuff
-
-\input{tikz_stuff}
+% \input{tikz_stuff}
 
 % Theorem environments
 
@@ -212,35 +252,38 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 %    backgroundcolor=white!93!yellow,
 %    }
 
-\newtheoremstyle{plain}
-  {-\topsep}		%space above
-  {}			%space below
-  {\normalfont}		%body font
-  {}			%indent amount
-  {\bfseries}		%theorem head font
-  {.}			%punctuation after theorem head
-  {.5em}		%space after theorem head
-  {}			%theorem head spec
+% \newtheoremstyle{plain}
+%   {-\topsep}		%space above
+%   {}			%space below
+%   {\normalfont}		%body font
+%   {}			%indent amount
+%   {\bfseries}		%theorem head font
+%   {.}			%punctuation after theorem head
+%   {.5em}		%space after theorem head
+%   {}			%theorem head spec
+
+
+
 
 % amsthm %
-  \theoremstyle{plain}
-  \newmdtheoremenv[style=theoremframe]{theorem}[equation]{Theorem}
-  \newmdtheoremenv[style=theoremframe]{proposition}[equation]{Proposition}
-  \newmdtheoremenv[style=theoremframe]{corollary}[equation]{Corollary}
-  \newmdtheoremenv[style=theoremframe]{lemma}[equation]{Lemma}
-
-  \theoremstyle{plain}
-  \newmdtheoremenv[style=definitionframe]{definition}[equation]{Definition}
-  \newmdtheoremenv[style=definitionframe]{roughDef}[equation]{Rough Definition}
-  \crefname{roughDef}{Definition}{Definitions}
-  \newtheorem{construction}[equation]{Construction}
-  \newtheorem{notation}[equation]{Notation}
-  \newtheorem{axiom}{Axiom}
-  \newtheorem*{axiom*}{Axiom}
-
-  \theoremstyle{remark}
-  \newtheorem{remark}[equation]{Remark}
-  \newtheorem{warning}[equation]{Warning}
+%%%   \theoremstyle{plain}
+%%%   \newmdtheoremenv[style=theoremframe]{theorem}[equation]{Theorem}
+%%%   \newmdtheoremenv[style=theoremframe]{proposition}[equation]{Proposition}
+%%%   \newmdtheoremenv[style=theoremframe]{corollary}[equation]{Corollary}
+%%%   \newmdtheoremenv[style=theoremframe]{lemma}[equation]{Lemma}
+%%%
+%%%   \theoremstyle{plain}
+%%%   \newmdtheoremenv[style=definitionframe]{definition}[equation]{Definition}
+%%%   \newmdtheoremenv[style=definitionframe]{roughDef}[equation]{Rough Definition}
+%%%   \crefname{roughDef}{Definition}{Definitions}
+%%%   \newtheorem{construction}[equation]{Construction}
+%%%   \newtheorem{notation}[equation]{Notation}
+%%%   \newtheorem{axiom}{Axiom}
+%%%   \newtheorem*{axiom*}{Axiom}
+%%%
+%%%   \theoremstyle{remark}
+%%%   \newtheorem{remark}[equation]{Remark}
+%%%   \newtheorem{warning}[equation]{Warning}
 %  \newtheorem{exercise}[equation]{Exercise}
 
 
@@ -257,12 +300,12 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % ---
 \usepackage[num,abnt-etal-list=0]{abntex2cite}	% Citações padrão ABNT, removendo et al na bibliografia
 \citebrackets[]
-% hack para colocar colchetes nas referencias.
+% hack para colocar colchetes nas references.
 \makeatletter
 \ifthenelse{\boolean{ABCIbiblabelonmargin}}
 {
 \renewcommand{\@biblabel}[1]%
-{\ifthenelse{\equal{#1}{}}{}{{\citenumstyle #1\hspace{\biblabelsep}}}}
+%{\ifthenelse{\equal{#1}{}}{}{{\citenumstyle #1\hspace{\biblabelsep}}}}
 }
 {
 \renewcommand{\@biblabel}[1]%
@@ -283,7 +326,7 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\pagebreak\thispagestyle{empty}\input{./pretextuais/capa}
+\pagebreak\thispagestyle{empty}\input{./typeset/prettext/capa}
 
 
 % ---
@@ -424,21 +467,21 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % Dedicatória
 % ---
 
-\pagebreak\thispagestyle{empty}\input{./pretextuais/dedicatoria}
+\pagebreak\thispagestyle{empty}\input{./typeset/prettext/dedicatoria}
 
 % ---
 
 % ---
 % Epígrafe
 % ---
-\pagebreak\thispagestyle{empty}\input{./pretextuais/epigrafe}
+\pagebreak\thispagestyle{empty}\input{./typeset/prettext/epigrafe}
 % ---
 
 % ---
 % RESUMOS
 % ---
 
-\pagebreak\thispagestyle{empty}\input{./pretextuais/resumos}
+\pagebreak\thispagestyle{empty}\input{./typeset/prettext/resumos}
 
 
 % ---
@@ -470,7 +513,7 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % inserir lista de siglas e simbolos
 % ---
 
-\pagebreak\thispagestyle{empty}\input{./pretextuais/siglasesimbolos}
+\pagebreak\thispagestyle{empty}\input{./typeset/prettext/siglasesimbolos}
 
 % ---
 
@@ -479,7 +522,7 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % ---
 % Agradecimentos
 % ---
-\pagebreak\thispagestyle{empty}\input{./pretextuais/agradecimentos}
+\pagebreak\thispagestyle{empty}\input{./typeset/prettext/agradecimentos}
 % ---
 
 
@@ -491,11 +534,11 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 \aliaspagestyle{chapter}{simple}
 
 
-\pagebreak\thispagestyle{empty}\input{./conteudo/introducao}
-\pagebreak\thispagestyle{empty}\input{./conteudo/fundamentacao}
-\pagebreak\thispagestyle{empty}\input{./conteudo/metodologia}
-\pagebreak\thispagestyle{empty}\input{./conteudo/resultados}
-\pagebreak\thispagestyle{empty}\input{./conteudo/conclusao}
+\pagebreak\thispagestyle{empty}\input{./typeset/chapters/introducao}
+\pagebreak\thispagestyle{empty}\input{./typeset/chapters/fundamentacao}
+\pagebreak\thispagestyle{empty}\input{./typeset/chapters/metodologia}
+\pagebreak\thispagestyle{empty}\input{./typeset/chapters/resultados}
+\pagebreak\thispagestyle{empty}\input{./typeset/chapters/conclusao}
 
 
 % ----------------------------------------------------------
@@ -507,7 +550,7 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{referencias}
+\bibliography{references}
 
 % ----------------------------------------------------------
 % Glossário
@@ -520,8 +563,8 @@ citecolor=orange!50!black, urlcolor=orange!50!black, pdfencoding=unicode]{hyperr
 % ---
 % Apêndices e Anexos
 % ---
-\pagebreak\thispagestyle{empty}\input{./postextuais/apendices}
-\pagebreak\thispagestyle{empty}\input{./postextuais/anexos}
+\pagebreak\thispagestyle{empty}\input{./typeset/posttext/apendices}
+\pagebreak\thispagestyle{empty}\input{./typeset/posttext/anexos}
 
 
 %---------------------------------------------------------------------
