@@ -70,7 +70,7 @@
   \begin{capa}%
     \center
 	\vspace*{-1cm}
-    \includegraphics[scale=0.3]{pdfassets/images/brasao}
+    \includegraphics[scale=0.3]{./typeset/pdfassets/images/brasao}
     \vspace*{-13mm}
     {\SingleSpacing \large \imprimirinstituicao}
 
@@ -103,7 +103,7 @@
 \begin{folhaderosto}
 \centering
 \vspace*{-1cm}
-\includegraphics[scale=0.23]{pdfassets/images/brasao}
+\includegraphics[scale=0.23]{./typeset/pdfassets/images/brasao}
 \vspace*{-13mm}
 {\SingleSpacing \large \imprimirinstituicao}
 
