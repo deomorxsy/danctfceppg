@@ -97,7 +97,6 @@ acs-*.bib
 *.lol
 
 # makeidx
-=======
 LATEX_DISSERTATION_MASTERS_2024-PPGEC.zip
 abntex2-modelo-img-marca.pdf
 abntex2-modelo-img-grafico.pdf
@@ -121,12 +120,10 @@ abntex2-modelo-img-grafico.pdf
 *.glg
 *.glo
 *.gls
->>>>>>> upstream
 *.idx
 *.ilg
 *.ind
 *.ist
-<<<<<<< HEAD
 
 # minitoc
 *.maf
@@ -204,7 +201,6 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
-=======
 *.lof
 *.log
 *.lol
