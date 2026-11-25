@@ -104,6 +104,20 @@
 %\setmathfont{tgpagella}
 
 
+% ===========================
+% Define commands for Type Theory Inference Rules
+% at ./taipacat/types.tex
+\def\OPTIONConf{1}%
+\usepackage{./typeset/taipacat/jdunfield-llproof}
+\usepackage{./typeset/taipacat/jdunfield-rulelinks}
+\newcommand{\macroname}[1]{\texttt{\Backslash}\textvtt{#1}}
+\newcommand{\unitty}{\tyname{1}}
+\newcommand{\rulename}[1]{\textsf{#1}}
+\newcommand{\elabtyperulename}[1]{\rulename{\textcolor{dDigPurple}{E#1}}}
+\newrulecommand{EVar}{\elabtyperulename{var}}
+
+
+
 %\usepackage{amssymb}
 \usepackage{accents}
 \usepackage{newpxtext}
